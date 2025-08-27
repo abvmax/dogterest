@@ -1,0 +1,13 @@
+.not-page {
+  &__wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+  }
+
+  &__btn {
+    transition: 0.2s ease-in-out;
+  }
+}

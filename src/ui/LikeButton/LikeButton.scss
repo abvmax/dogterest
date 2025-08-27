@@ -1,0 +1,18 @@
+.btn-like {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 1;
+  color: white;
+
+  &__on {
+    stroke: var(--red);
+    color: transparent;
+  }
+
+  &__off {
+    color: var(--red);
+  }
+}

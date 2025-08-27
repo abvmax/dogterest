@@ -1,0 +1,43 @@
+@use "../../styles/index.scss" as *;
+
+.header {
+  position: relative;
+  padding: 20px;
+  min-height: 600px;
+  background-color: var(--red);
+
+  @media (max-width: $container-s) {
+    padding: 10px;
+  }
+
+  &__container {
+    position: fixed;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 42px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    @media (max-width: $container-l) {
+      font-size: 34px;
+    }
+  }
+
+  &__logo {
+    max-width: 50px;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,65 @@
+@use "../../styles/index.scss";
+
+@mixin linkAfter {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  transition: transform 0.3s;
+}
+
+.nav {
+  z-index: 1;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    white-space: nowrap;
+  }
+
+  &__link {
+    position: relative;
+    font-size: 18px;
+    color: var(--white);
+  }
+
+  &__link::after {
+    @include linkAfter();
+    background-color: var(--black);
+    transform: scaleX(0);
+  }
+
+  &__link:hover::after {
+    transform: scale(1);
+  }
+
+  &__link.active::after {
+    @include linkAfter();
+    background-color: var(--white);
+    transform: scaleX(1);
+  }
+}
+
+/* @media (max-width: index.$container-xl) {
+  .nav {
+    &__list {
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: index.$container-l) {
+  .nav {
+    &__link_main {
+      display: none;
+    }
+
+    &__list {
+      gap: 0;
+    }
+  }
+} */

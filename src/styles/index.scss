@@ -1,0 +1,157 @@
+@use "normalize.css";
+
+$container-default: 1440px;
+$container-l: 960px;
+$container-s: 520px;
+$padding-default: 20px 80px;
+$padding-l: 20px 20px;
+$padding-s: 10px 10px;
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+img {
+  width: 100%;
+}
+
+svg,
+path,
+rect {
+  display: block;
+  transition: 0.3s ease-in-out;
+}
+
+input {
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:focus,
+a:focus,
+input:focus {
+  outline: none;
+}
+
+button:disabled {
+  pointer-events: none;
+  color: rgba(128, 128, 128, 0.596);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+
+  @media (max-width: $container-s) {
+    grid-template-columns: 120px 1fr;
+  }
+}
+
+.container {
+  max-width: $container-default;
+  width: 100%;
+  padding: $padding-default;
+  margin: 0 auto;
+}
+
+/* fonts */
+
+@font-face {
+  font-family: "Play";
+  src: local("Play-Bold"),
+    url("../assets/fonts/Play-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Play";
+  src: local("Play-Regular"),
+    url("../assets/fonts/Play-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* castoms */
+
+:root {
+  --white: #fff;
+  --black: #08090e;
+  --green: #99ca52;
+  --orange: #dd934d;
+  --red: #cc102b;
+}
+
+.error {
+  text-align: center;
+}
+
+.btn {
+  padding: 5px 35px;
+  background-color: var(--red);
+  border-radius: 5px;
+  color: var(--white);
+}
+
+.btn:hover {
+  background-color: red;
+}
+
+@media (max-width: $container-l) {
+  .container {
+    padding: $padding-l;
+  }
+}
+
+@media (max-width: $container-s) {
+  .container {
+    padding: $padding-s;
+  }
+}

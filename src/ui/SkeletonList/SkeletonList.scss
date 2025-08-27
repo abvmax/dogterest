@@ -1,0 +1,34 @@
+.skeleton {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 40px;
+  }
+
+  &__item {
+    min-height: 300px;
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    /* скользящая полоса */
+    background-image: linear-gradient(
+      100deg,
+      transparent,
+      rgba(38, 50, 56, 0.5) 50%,
+      transparent 80%
+    );
+    background-repeat: no-repeat;
+    background-size: 75px 100%;
+    animation: animloader 1s linear infinite;
+  }
+
+  @keyframes animloader {
+    0% {
+      background-position: 0%;
+    }
+
+    100% {
+      background-position: 100%;
+    }
+  }
+}
